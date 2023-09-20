@@ -20,3 +20,5 @@
 export { default as Avatar } from './Avatar';
 export { default as AvatarStack } from './AvatarStack';
 export { default as AvatarWithName } from './AvatarWithName';
+export { default as Badge } from './Badge';
+export { default as Btn } from './Btn';

@@ -1,5 +1,4 @@
-import { Avatar, AvatarStack, AvatarWithName } from "../components";
-import Badge from "../components/Badge";
+import { Avatar, AvatarStack, AvatarWithName, Badge, Btn } from "../components";
 
 export default function Components() {
 	return (
@@ -44,14 +43,17 @@ export default function Components() {
 					{Array.from({ length: 4 }, (_, i) => (
 						<li className="avatar-stack-item" key={i}>
 							<Avatar>
-								<img src={require("../assets/images/avatar.jpg")} alt="Avatar" />
+								<img
+									src={require("../assets/images/avatar.jpg")}
+									alt="Avatar"
+								/>
 							</Avatar>
 						</li>
 					))}
 				</AvatarStack>
 			</div>
 
-            <hr />
+			<hr />
 
 			<div className="py-2">
 				<h4 class="mb-2">Avatar With Name</h4>
@@ -73,6 +75,23 @@ export default function Components() {
 				<Badge className="bg-red fg-white ms-2">This Badge</Badge>
 				<Badge className="bg-blue fg-white ms-2">This Badge</Badge>
 				<Badge className="bg-purple fg-white ms-2">This Badge</Badge>
+			</div>
+
+			<hr />
+
+			<div className="py-2">
+				<h4 className="mb-4">Buttons</h4>
+				
+				<Btn>Click Me!</Btn>
+				<Btn className="ms-2" type="primary">
+					Click Me!
+				</Btn>
+				<Btn className="ms-2" type="secondary">
+					Click Me!
+				</Btn>
+				<Btn className="ms-2" type="outline">
+					Click Me!
+				</Btn>
 			</div>
 		</div>
 	);
