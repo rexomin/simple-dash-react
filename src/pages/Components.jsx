@@ -1,4 +1,5 @@
 import { Avatar, AvatarStack, AvatarWithName } from "../components";
+import Badge from "../components/Badge";
 
 export default function Components() {
 	return (
@@ -60,6 +61,18 @@ export default function Components() {
 						<span>AT</span>
 					</Avatar>
 				</AvatarWithName>
+			</div>
+
+			<hr />
+
+			<div className="py-2">
+				<h4 className="mb-4">Badges</h4>
+
+				<Badge className="bg-orange fg-white">This Badge</Badge>
+				<Badge className="bg-green fg-white ms-2">This Badge</Badge>
+				<Badge className="bg-red fg-white ms-2">This Badge</Badge>
+				<Badge className="bg-blue fg-white ms-2">This Badge</Badge>
+				<Badge className="bg-purple fg-white ms-2">This Badge</Badge>
 			</div>
 		</div>
 	);
