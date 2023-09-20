@@ -1,0 +1,33 @@
+/* Fonts */
+@import "../assets/fonts/AirbnbCerealApp/load.css";
+
+/* Assets */
+@import "../assets/styles/iconsax/iconsax.css";
+
+/* Essential Styles */
+@import "./reboot";
+@import "./variables";
+@import "./bootstrap-grid";
+@import "./media-queries";
+@import "./general";
+
+/* Global Component Styles
+ * You can import your component styles here. These styles will be added globally and affect all pages.
+ */
+
+/* Global Page Styles
+ * You can import your page-specific styles here. These styles will be added globally and affect all pages.
+ */
+
+/* Global Css Variables */
+:root {
+    --primary-color: #{$primary-color};
+    --primary-color-action: #{darken($primary-color, 5%)};
+    --secondary-color: #{$secondary-color};
+    --secondary-color-action: #{darken($secondary-color, 5%)};
+}
+
+/* Global Styles */
+body {
+    font-family: $body-font-family;
+}

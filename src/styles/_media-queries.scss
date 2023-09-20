@@ -1,0 +1,83 @@
+@mixin only-phone-xs {
+    @media (max-width: #{$xsm-screen - 1}) {
+        @content;
+    }
+}
+
+@mixin only-desktop-xs {
+    @media (min-width: $xsm-screen) {
+        @content;
+    }
+}
+
+@mixin only-phone {
+    @media (max-width: #{$sm-screen - 1}) {
+        @content;
+    }
+}
+
+@mixin only-desktop {
+    @media (min-width: $sm-screen) {
+        @content;
+    }
+}
+
+@mixin only-phone-md {
+    @media (max-width:  #{$md-screen - 1}) {
+        @content;
+    }
+}
+
+@mixin only-desktop-md {
+    @media (min-width: $md-screen) {
+        @content;
+    }
+}
+
+@mixin only-phone-lg {
+    @media (max-width: #{$lg-screen - 1}) {
+        @content;
+    }
+}
+
+@mixin only-desktop-lg {
+    @media (min-width: $lg-screen) {
+        @content;
+    }
+}
+
+@mixin only-phone-xl {
+    @media (max-width: #{$xl-screen - 1}) {
+        @content;
+    }
+}
+
+@mixin only-desktop-xl {
+    @media (min-width: $xl-screen) {
+        @content;
+    }
+}
+
+@mixin only-phone-xxl {
+    @media (max-width: #{$xxl-screen - 1}) {
+        @content;
+    }
+}
+
+@mixin only-desktop-xxl {
+    @media (min-width: $xxl-screen) {
+        @content;
+    }
+}
+
+@mixin only-phone-xxxl {
+    @media (max-width: #{$xxxl-screen - 1}) {
+        @content;
+    }
+}
+
+@mixin only-desktop-xxxl {
+    @media (min-width: $xxxl-screen) {
+        @content;
+    }
+}
