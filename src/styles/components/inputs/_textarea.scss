@@ -1,0 +1,25 @@
+.sd-input-wrapper {
+    label {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 14px;
+        line-height: 17px;
+        letter-spacing: 0.2px;
+        color: #8f90a6;
+    }
+
+    textarea {
+        background: #f4f6f3;
+        border-radius: 6px;
+        border: 1px solid #0063F700;
+        padding: 17px 20px;
+        width: 100%;
+        transition: all 200ms ease;
+        resize: none;
+
+        &:focus {
+            border-color: #0063F7;
+            background-color: #F3F7FD;
+        }
+    }
+}

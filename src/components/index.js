@@ -22,3 +22,9 @@ export { default as AvatarStack } from './AvatarStack';
 export { default as AvatarWithName } from './AvatarWithName';
 export { default as Badge } from './Badge';
 export { default as Btn } from './Btn';
+export { default as AuthCode } from './inputs/AuthCode';
+export { default as Checkbox } from './inputs/Checkbox';
+export { default as Input } from './inputs/Input';
+export { default as SelectInput } from './inputs/SelectInput';
+export { default as TextArea } from './inputs/TextArea';
+

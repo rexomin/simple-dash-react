@@ -1,4 +1,15 @@
-import { Avatar, AvatarStack, AvatarWithName, Badge, Btn } from "../components";
+import {
+	AuthCode,
+	Avatar,
+	AvatarStack,
+	AvatarWithName,
+	Badge,
+	Btn,
+	Checkbox,
+	Input,
+	SelectInput,
+} from "../components";
+import Textarea from "../components/inputs/TextArea";
 
 export default function Components() {
 	return (
@@ -81,7 +92,7 @@ export default function Components() {
 
 			<div className="py-2">
 				<h4 className="mb-4">Buttons</h4>
-				
+
 				<Btn>Click Me!</Btn>
 				<Btn className="ms-2" type="primary">
 					Click Me!
@@ -92,6 +103,29 @@ export default function Components() {
 				<Btn className="ms-2" type="outline">
 					Click Me!
 				</Btn>
+			</div>
+
+			<hr />
+
+			<div className="py-2">
+				<h4 className="mb-4">Inputs</h4>
+
+				<Input
+					className="mb-4"
+					id="name-input"
+					placeholder="Enter your name"
+				/>
+				<Textarea
+					className="mb-4"
+					id="message-input"
+					placeholder="Enter your message"
+				/>
+				<Checkbox className="mb-4" text="Please check me!" />
+				<SelectInput
+					className="mb-4"
+					select-options={[{ title: "me" }, { title: "others" }]}
+				/>
+				<AuthCode />
 			</div>
 		</div>
 	);
