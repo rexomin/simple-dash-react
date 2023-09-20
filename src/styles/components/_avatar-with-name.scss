@@ -1,0 +1,14 @@
+@import "../typography";
+
+.avatar-with-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .avatar-name {
+        @extend .tg-body-md;
+
+        margin-left: 10px;
+        flex: 1;
+    }
+}

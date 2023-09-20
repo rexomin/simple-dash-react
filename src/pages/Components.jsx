@@ -1,4 +1,4 @@
-import { Avatar, AvatarStack } from "../components";
+import { Avatar, AvatarStack, AvatarWithName } from "../components";
 
 export default function Components() {
 	return (
@@ -48,6 +48,18 @@ export default function Components() {
 						</li>
 					))}
 				</AvatarStack>
+			</div>
+
+            <hr />
+
+			<div className="py-2">
+				<h4 class="mb-2">Avatar With Name</h4>
+
+				<AvatarWithName name="Asghar Taraghe">
+					<Avatar class="ms-2" size="md" color="blue">
+						<span>AT</span>
+					</Avatar>
+				</AvatarWithName>
 			</div>
 		</div>
 	);
