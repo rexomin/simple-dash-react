@@ -1,0 +1,13 @@
+.avatar-stack {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    .avatar-stack-item {
+        margin-left: -20px;
+
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+}

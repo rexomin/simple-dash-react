@@ -1,4 +1,4 @@
-import { Avatar } from "../components";
+import { Avatar, AvatarStack } from "../components";
 
 export default function Components() {
 	return (
@@ -6,8 +6,8 @@ export default function Components() {
 			<h1>Components</h1>
 			<hr />
 
-			<div>
-				<h4 class="mb-4">Avatars</h4>
+			<div className="py-2">
+				<h4 class="mb-2">Avatars</h4>
 
 				<div class="d-flex align-items-center">
 					<Avatar size="sm">
@@ -34,6 +34,21 @@ export default function Components() {
 				</div>
 			</div>
 
+			<hr />
+
+			<div className="py-2">
+				<h4 class="mb-2">Avatar Stack</h4>
+
+				<AvatarStack>
+					{Array.from({ length: 4 }, (_, i) => (
+						<li className="avatar-stack-item" key={i}>
+							<Avatar>
+								<img src={require("../assets/images/avatar.jpg")} alt="Avatar" />
+							</Avatar>
+						</li>
+					))}
+				</AvatarStack>
+			</div>
 		</div>
 	);
 }
