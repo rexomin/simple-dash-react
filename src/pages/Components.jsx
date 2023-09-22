@@ -9,13 +9,13 @@ import {
 	Checkbox,
 	IconText,
 	Input,
+	Textarea,
 	Metric,
 	MicroCard,
 	ProgressBar,
 	SelectInput,
 	Table,
 } from "../components";
-import Textarea from "../components/inputs/TextArea";
 
 export default function Components() {
 	return (
