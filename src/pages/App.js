@@ -1,5 +1,10 @@
 import { Route, Routes } from "react-router-dom";
+
 import Home from "./Home";
+
+import Login from './Login';
+import Register from './Register';
+
 import Dashboard from "./panel/dashboard";
 import Users from "./panel/users";
 import Chat from "./panel/chat";
@@ -9,15 +14,20 @@ import PanelLayout from "./layouts/PanelLayout";
 
 export default function App() {
   return <>
-    <PanelLayout>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/panel/dashboard" element={<Dashboard />} />
-        <Route path="panel/users" element={<Users />} />
-        <Route path="panel/chat" element={<Chat />} />
-        <Route path="panel/components" element={<Components />} />
-        <Route path="panel/settings" element={<Settings />} />
-      </Routes>
-    </PanelLayout>
+    <Routes>
+      <Route path="/" element={<Home />} />
+
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+
+      <Route path="/panel/*" element={<PanelLayout />}>
+        <Route index element={<Dashboard />} />
+        <Route path="dashboard" element={<Dashboard />} />
+        <Route path="users" element={<Users />} />
+        <Route path="chat" element={<Chat />} />
+        <Route path="components" element={<Components />} />
+        <Route path="settings" element={<Settings />} />
+      </Route>
+    </Routes>
   </>
 }

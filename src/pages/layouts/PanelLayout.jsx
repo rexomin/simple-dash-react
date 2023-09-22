@@ -3,6 +3,7 @@ import "../../styles/layout/_panel-layout.scss";
 import Sidebar from "./Sidebar";
 import EventEmitter from "../../utils/EventEmitter";
 import { Avatar, Btn } from "../../components";
+import { Outlet } from "react-router-dom";
 
 function PanelLayout({ children, ...props }) {
 	const [loading, setLoading] = useState({
@@ -94,7 +95,9 @@ function PanelLayout({ children, ...props }) {
 						</div>
 					</div>
 
-					<div className="panel-content-wrapper">{children}</div>
+					<div className="panel-content-wrapper">
+						<Outlet />
+					</div>
 				</div>
 			</div>
 		</div>

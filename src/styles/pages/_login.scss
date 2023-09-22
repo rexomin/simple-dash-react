@@ -1,0 +1,112 @@
+@import "../_variables";
+@import "../_media-queries";
+
+.login-wrapper {
+    display: flex;
+    height: 100%;
+
+    .login-spacefiller {
+        width: 700px;
+        height: 100%;
+        background: black;
+        position: relative;
+        border-radius: 50px 0px 0px 50px;
+        background-image: url("../../assets//images/login-background.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        @include only-phone-lg {
+            display: none;
+        }
+
+        .login-logo {
+            height: 24px;
+            position: absolute;
+            top: 100px;
+            right: 100px;
+        }
+    }
+
+    .login-content-wrapper {
+        flex: 1;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include only-phone-lg {
+            padding: 0px 26px;
+        }
+
+        .login-content {
+            width: 100%;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .login-title {
+                font-size: 32px;
+                line-height: 39px;
+                letter-spacing: 0.2px;
+                color: #000000;
+                font-weight: 700;
+                width: 100%;
+            }
+
+            .login-desc {
+                font-size: 14px;
+                line-height: 17px;
+                letter-spacing: 0.2px;
+                color: #8f90a6;
+                margin-bottom: 40px;
+                width: 100%;
+                margin-top: 12px;
+            }
+
+            .login-form {
+                width: 100%;
+
+                .login-bottom {
+                    display: flex;
+                    align-items: center;
+
+                    .login-remember {}
+
+                    .login-forget {
+                        margin-left: auto;
+
+                        #forget-btn {
+                            background: none;
+                        }
+                    }
+                }
+
+                #login-btn {
+                    background: #000000;
+                    color: #ffffff;
+                    width: 100%;
+                    padding: 15px;
+                    border-radius: 15px;
+                    transition: all 0.2s ease-in-out;
+
+                    &:hover {
+                        background: #2b2b2b;
+                    }
+                }
+            }
+        }
+
+        .login-create-account {
+            span {
+                color: #8f90a6;
+                margin-right: 8px;
+            }
+
+            button {
+                background: none;
+            }
+        }
+    }
+}
