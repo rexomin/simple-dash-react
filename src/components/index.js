@@ -28,6 +28,7 @@ export { default as MicroCard } from './MicroCard';
 export { default as Metric } from './Metric';
 export { default as ProgressBar } from './ProgressBar';
 export { default as Table } from './Table';
+export { default as StatisticBox } from './StatisticBox';
 
 //inputs
 export { default as AuthCode } from './inputs/AuthCode';
