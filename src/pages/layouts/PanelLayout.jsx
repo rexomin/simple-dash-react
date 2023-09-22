@@ -3,7 +3,7 @@ import "../../styles/layout/_panel-layout.scss";
 import Sidebar from "./Sidebar";
 import EventEmitter from "../../utils/EventEmitter";
 
-function PanelLayout() {
+function PanelLayout({ children, ...props }) {
 	const [loading, setLoading] = useState({
 		panel: false,
 		container: false,
@@ -38,7 +38,7 @@ function PanelLayout() {
 			</div>
 
 			<div className="panel">
-                <Sidebar dark={true} />
+				<Sidebar dark={true} />
 
 				<div className="panel-container">
 					<div className="panel-container-header">
@@ -98,14 +98,7 @@ function PanelLayout() {
 						</div>
 					</div>
 
-					{/* page content */}
-					<div className="panel-content-wrapper">
-						<div className="panel-content-container">
-							<div className="panel-content">
-								Page content here
-							</div>
-						</div>
-					</div>
+					<div className="panel-content-wrapper">{children}</div>
 				</div>
 			</div>
 		</div>
