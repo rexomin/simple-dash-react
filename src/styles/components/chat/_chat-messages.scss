@@ -1,0 +1,59 @@
+.sd-chat-messages {
+    display: flex;
+    flex-direction: column;
+    padding: 0 32px;
+    margin: 0 -32px;
+    padding-top: 15px;
+    flex: 1;
+    overflow-y: auto;
+
+    .sd-chat-message {
+        width: max-content;
+        min-width: 25%;
+        max-width: 97%;
+        margin-bottom: 25px;
+
+        .sd-chat-message-content {
+            padding: 20px 17px;
+            border-radius: 12px;
+            margin-bottom: 8px;
+            background: #0063f7;
+            color: #ffffff;
+
+            .sd-message-sender {
+                font-size: 12px;
+                line-height: 15px;
+                letter-spacing: 0.2px;
+                margin-bottom: 14px;
+            }
+
+            .sd-message-text {
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 17px;
+                letter-spacing: 0.2px;
+            }
+        }
+
+        .sd-chat-message-date {
+            font-size: 12px;
+            line-height: 15px;
+            text-align: left;
+            letter-spacing: 0.2px;
+            color: #8f90a6;
+        }
+
+        &.right {
+            margin-left: auto;
+
+            .sd-chat-message-content {
+                background: #f4f6f3;
+                color: #1c1c28;
+            }
+
+            .sd-chat-message-date {
+                text-align: right;
+            }
+        }
+    }
+}
