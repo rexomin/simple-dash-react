@@ -1,31 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import "../../styles/layout/_sidebar.scss";
 import { NavLink } from "react-router-dom";
-import {Avatar} from "../../components";
+import { Avatar } from "../../components";
+import EventEmitter from "../../utils/EventEmitter";
 
-function Sidebar({ dark }) {
-	const [sidebar, setSidebar] = useState({
-		desktopShow: true,
-		mobileShow: false,
-	});
+function Sidebar({ dark, ...props }) {
+	const [sidebarShowDesktop, setSidebarShowDesktop] = useState(true);
+	const [sidebarShowMobile, setSidebarShowMobile] = useState(false);
 
-	useEffect(() => {
-		initSidebar();
-
-		window.onresize = () => {
-			renderSidebar();
-		};
-	}, []);
-
-	const initSidebar = () => {
-		renderSidebar();
-	};
-
-	const renderSidebar = () => {
+	const renderSidebar = useCallback(() => {
 		const sidebarElement = document.querySelector(".sidebar");
 
 		if (window.innerWidth <= 990) {
-			if (sidebar.mobileShow) {
+			if (sidebarShowMobile) {
 				sidebarElement.classList.add("show");
 				document
 					.querySelector(".sidebar-backdrop")
@@ -37,62 +24,75 @@ function Sidebar({ dark }) {
 					.classList.remove("show");
 			}
 		} else {
-			if (sidebar.desktopShow) {
+			if (sidebarShowDesktop) {
 				sidebarElement.classList.add("show");
 			} else {
 				sidebarElement.classList.remove("show");
 			}
 		}
-	};
+	}, [sidebarShowDesktop, sidebarShowMobile]);
 
 	const openSidebar = () => {
-		const sidebarElement = document.querySelector(".sidebar");
-
 		if (window.innerWidth <= 990) {
-			setSidebar({ ...sidebar, mobileShow: true });
+			setSidebarShowMobile(() => true);
 		} else {
-			setSidebar({ ...sidebar, desktopShow: true });
+			setSidebarShowDesktop(() => true);
 		}
-
-		renderSidebar();
 	};
 
 	const closeSidebar = () => {
-		const sidebarElement = document.querySelector(".sidebar");
-
 		if (window.innerWidth <= 990) {
-			setSidebar({ ...sidebar, mobileShow: false });
+			setSidebarShowMobile(() => false);
 		} else {
-			setSidebar({ ...sidebar, desktopShow: false });
+			setSidebarShowDesktop(() => false);
 		}
-
-		renderSidebar();
 	};
 
 	const toggleSidebar = () => {
-		const sidebarElement = document.querySelector(".sidebar");
-
 		if (window.innerWidth <= 990) {
-			if (sidebar.mobileShow) {
+			if (sidebarShowMobile) {
 				closeSidebar();
 			} else {
 				openSidebar();
 			}
 		} else {
-			if (sidebar.desktopShow) {
+			if (sidebarShowDesktop) {
 				closeSidebar();
 			} else {
 				openSidebar();
 			}
 		}
 	};
+
+	useEffect(() => {
+		EventEmitter.addListener("openSidebar", openSidebar);
+		EventEmitter.addListener("closeSidebar", closeSidebar);
+		EventEmitter.addListener("toggleSidebar", toggleSidebar);
+
+		renderSidebar();
+
+		window.onresize = () => {
+			renderSidebar();
+		};
+		
+		return () => {
+			window.onresize = null;
+		}
+	});
+
+	useEffect(() => {
+		renderSidebar();
+	}, [renderSidebar, sidebarShowDesktop, sidebarShowMobile]);
 
 	return (
 		<div className="sidebar-wrapper">
 			<div className={`sidebar ${dark ? "dark" : ""}`}>
 				<div className="logo-wrapper">
 					<div className="sidebar-logo">
-						<img src={require("../../assets/images/logo-dark.png")} alt="Logo" />
+						<img
+							src={require("../../assets/images/logo-dark.png")}
+							alt="Logo"
+						/>
 					</div>
 				</div>
 
@@ -109,10 +109,7 @@ function Sidebar({ dark }) {
 						</li>
 
 						<li>
-							<NavLink
-								to="/panel/users"
-								active-class="active"
-							>
+							<NavLink to="/panel/users" active-class="active">
 								<i className="nav-icon fas fa-users"></i>
 								<span className="nav-text">Users</span>
 							</NavLink>
@@ -140,10 +137,7 @@ function Sidebar({ dark }) {
 						</li>
 
 						<li>
-							<NavLink
-								to="/panel/settings"
-								active-class="active"
-							>
+							<NavLink to="/panel/settings" active-class="active">
 								<i className="nav-icon fas fa-gear"></i>
 								<span className="nav-text">Settings</span>
 							</NavLink>

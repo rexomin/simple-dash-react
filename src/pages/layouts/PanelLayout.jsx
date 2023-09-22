@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../../styles/layout/_panel-layout.scss";
 import Sidebar from "./Sidebar";
+import EventEmitter from "../../utils/EventEmitter";
 
 function PanelLayout() {
 	const [loading, setLoading] = useState({
@@ -12,8 +13,8 @@ function PanelLayout() {
 		show: false,
 	});
 
-	const openMobileSidebar = () => {
-		// Implement your logic for opening the mobile sidebar in React
+	const toggleSidebar = () => {
+		EventEmitter.emit("toggleSidebar");
 	};
 
 	useEffect(() => {
@@ -44,7 +45,7 @@ function PanelLayout() {
 						<div className="panel-container-header-left">
 							<button
 								className="sidebar-toggle-btn"
-								onClick={openMobileSidebar}
+								onClick={toggleSidebar}
 							>
 								<i className="fas fa-bars"></i>
 							</button>
