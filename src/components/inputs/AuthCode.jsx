@@ -8,6 +8,11 @@ const AuthCode = (props) => {
 		const inputValue = e.target.value;
 		const newCode = [...code];
 
+		//check if the input value is a number or empty string
+		if(isNaN(parseInt(inputValue)) && inputValue !== "") {
+			return;
+		}
+
 		if (!isNaN(parseInt(inputValue))) {
 			newCode[index] = inputValue;
 		} else if (inputValue === "") {
