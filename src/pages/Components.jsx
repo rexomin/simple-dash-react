@@ -316,7 +316,7 @@ export default function Components() {
 				<hr />
 
 				<div className="py-2">
-					<h4 class="mb-4">Metric</h4>
+					<h4 className="mb-4">Metric</h4>
 					<Metric />
 				</div>
 			</div>

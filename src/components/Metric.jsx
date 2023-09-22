@@ -7,7 +7,7 @@ function Metric() {
 	useEffect(() => {
 		// Create a script element for the external library
 		const script = document.createElement("script");
-		script.src = "/circle-progress-bar/circle-progress-bar.min.js";
+		script.src = "assets/libs/circle-progress-bar/circle-progress-bar.min.js";
 		script.async = true;
 
 		const onScriptLoad = () => {
