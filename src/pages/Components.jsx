@@ -13,6 +13,7 @@ import {
 	MicroCard,
 	ProgressBar,
 	SelectInput,
+	Table,
 } from "../components";
 import Textarea from "../components/inputs/TextArea";
 
@@ -329,6 +330,39 @@ export default function Components() {
 					<ProgressBar className="mt-2" value="50" />
 					<ProgressBar className="mt-2" value="75" />
 					<ProgressBar className="mt-2" value="90" />
+				</div>
+
+				<hr />
+
+				<div className="py-2">
+					<h4 class="mb-4">Table</h4>
+
+					<Table>
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Age</th>
+								<th>Country</th>
+								<th>Job</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<tr>
+								<td>Matin</td>
+								<td>20</td>
+								<td>Iran</td>
+								<td>Developer</td>
+							</tr>
+
+							<tr>
+								<td>Mika</td>
+								<td>2</td>
+								<td>Australia</td>
+								<td>-</td>
+							</tr>
+						</tbody>
+					</Table>
 				</div>
 			</div>
 		</div>
