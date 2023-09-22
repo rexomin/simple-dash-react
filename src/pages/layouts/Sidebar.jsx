@@ -86,7 +86,7 @@ function Sidebar({ dark, ...props }) {
 
 	return (
 		<div className="sidebar-wrapper">
-			<div className={`sidebar ${dark ? "dark" : ""}`}>
+			<div className={`sidebar ${dark ? "dark" : ""} ${window.innerWidth > 990 ? "show" : ""}`}>
 				<div className="logo-wrapper">
 					<div className="sidebar-logo">
 						<img
