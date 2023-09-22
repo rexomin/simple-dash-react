@@ -1,12 +1,10 @@
 import React from "react";
 import "../styles/components/_btn.scss";
 
-const Btn = (props) => {
-	const { type = "", disabled = false } = props;
-
+const Btn = ({ type, children, onClick = () => {}, disabled = false, ...props }) => {
 	const handleClick = (event) => {
 		if (!disabled) {
-			props.onClick(event);
+			onClick(event);
 		}
 	};
 
@@ -18,7 +16,7 @@ const Btn = (props) => {
 			onClick={handleClick}
 			disabled={disabled}
 		>
-			{props.children}
+			{children}
 		</button>
 	);
 };
