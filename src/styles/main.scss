@@ -30,6 +30,10 @@
 }
 
 /* Global Styles */
+html,body, #root{
+    height: 100%;
+}
+
 body {
     font-family: $body-font-family;
 }

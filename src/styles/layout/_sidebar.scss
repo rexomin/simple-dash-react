@@ -1,0 +1,166 @@
+@import "../_typography";
+@import "../media-queries";
+@import "../_variables";
+
+.sidebar {
+    width: 240px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: margin-left 0.3s ease-in-out, transform 0.3s ease-in-out;
+    margin-left: -240px;
+    position: relative;
+    z-index: 1000;
+
+    @include only-phone {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 999;
+    }
+
+    &.show {
+        margin-left: 0;
+    }
+
+    .logo-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 24px;
+        margin-bottom: 20px;
+
+        .sidebar-logo img{
+            height: 75px;
+            width: auto;
+        }
+    }
+
+    .sidebar-top {
+        flex: 1;
+        overflow-y: auto;
+        direction: rtl; //needed to make the scrollbar on the left side
+    }
+
+    .sidebar-bottom {
+        margin-top: 50px;
+        direction: rtl; //needed to make the scrollbar on the left side
+
+        .sidebar-account {
+            direction: ltr; //needed to make the scrollbar on the left side
+            display: flex;
+            align-items: center;
+            padding: 24px;
+            border-top: 1px solid #f1f1f1;
+            margin-top: 8px;
+
+            .sidebar-account-img {
+                margin-right: 15px;
+            }
+
+            .sidebar-account-name {
+                @extend .tg-body-lg;
+                color: #4f5b67;
+            }
+
+            .sidebar-account-desc {
+                @extend .tg-body-sm;
+                color: #4f5b67;
+            }
+        }
+    }
+
+    .sidebar-nav {
+        direction: ltr; //needed to make the scrollbar on the left side
+        display: flex;
+        flex-direction: column;
+
+        li {
+            margin-bottom: 8px;
+
+            a {
+                padding: 12px 24px;
+                cursor: pointer;
+                transition: all 0.3s ease-in-out;
+                display: flex;
+                align-items: center;
+
+                .nav-icon {
+                    font-size: 24px;
+                    margin-right: 23px;
+                }
+
+                .nav-text {
+                    @extend .tg-body-lg;
+                }
+
+                &:hover {
+                    background-color: #f7f7fb;
+                }
+
+                &.active {
+                    background-color: #f7f7fb;
+                    border-right: 4px solid #4040f2;
+                }
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.sidebar.dark {
+    background-color: #000000;
+    color: #f1f1f1;
+
+    .sidebar-nav {
+        li a {
+            &:hover {
+                background-color: #242d35;
+            }
+
+            &.active {
+                background-color: #242d35;
+            }
+        }
+    }
+
+    .sidebar-bottom {
+        margin-top: 50px;
+
+        .sidebar-account {
+            .sidebar-account-name {
+                color: #f1f1f1;
+            }
+
+            .sidebar-account-desc {
+                color: #f1f1f1;
+            }
+        }
+    }
+}
+
+.sidebar-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+
+    @include only-phone {
+        display: block;
+    }
+
+    &.show {
+        opacity: 1;
+        pointer-events: all;
+    }
+}

@@ -1,7 +1,9 @@
+import PanelLayout from "../layouts/PanelLayout";
+
 export default function Home() {
 	return (
-		<div>
+		<PanelLayout>
 			<h1>Home</h1>
-		</div>
+		</PanelLayout>
 	);
 }
