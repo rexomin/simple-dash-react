@@ -1,26 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "../../styles/components/inputs/_checkbox.scss";
 
-const Checkbox = (props) => {
-	const { text = "", value = false } = props;
-	const [isChecked, setIsChecked] = useState(value);
-
-	// Watch for changes in the `value` prop
-	useEffect(() => {
-		setIsChecked(value);
-	}, [value]);
-
-	const toggleCheckBox = () => {
-		setIsChecked(!isChecked);
-		props.onChange(!isChecked);
-		props.onClick();
-	};
-
+const Checkbox = ({ text, value, onChange = () => {}, ...props }) => {
 	return (
 		<div className={`sd-input-wrapper ${props.className}`}>
-			<label className="custom-checkbox" onClick={toggleCheckBox}>
+			<label className="custom-checkbox">
 				{text}
-				<input type="checkbox" checked={isChecked} readOnly />
+				<input
+					type="checkbox"
+					checked={value}
+					onChange={(e) => onChange(e.target.checked)}
+				/>
 				<span className="checkmark"></span>
 			</label>
 		</div>
