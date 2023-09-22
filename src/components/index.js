@@ -25,6 +25,7 @@ export { default as Btn } from './Btn';
 export { default as IconText } from './IconText';
 export { default as Card } from './Card';
 export { default as MicroCard } from './MicroCard';
+export { default as Metric } from './Metric';
 
 //inputs
 export { default as AuthCode } from './inputs/AuthCode';

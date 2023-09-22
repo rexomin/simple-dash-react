@@ -1,0 +1,40 @@
+@import "../_typography";
+
+.metric {
+    padding: 24px;
+    background: #ffffff;
+    border: 1px solid #eaecee;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .metric-text {
+        flex: 1;
+        padding-right: 100px;
+
+        .metric-title {
+            @extend .tg-heading-5;
+        }
+
+        .metric-value {
+            @extend .tg-heading-3;
+            margin-top: 42px;
+        }
+    }
+
+    .metric-chart {
+        position: relative;
+
+        .chart-text {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
