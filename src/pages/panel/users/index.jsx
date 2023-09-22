@@ -1,6 +1,12 @@
+import { useEffect } from "react";
+import EventEmitter from "../../../utils/EventEmitter";
 import PanelBar from "../../layouts/PanelBar";
 
 export default function Dashboard() {
+	useEffect(() => {
+		EventEmitter.emit("setPanelTitleText", "Users");
+	});
+
 	return (
         <>
         <PanelBar>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../../styles/layout/_panel-layout.scss";
 import Sidebar from "./Sidebar";
 import EventEmitter from "../../utils/EventEmitter";
+import { Avatar, Btn } from "../../components";
 
 function PanelLayout({ children, ...props }) {
 	const [loading, setLoading] = useState({
@@ -18,14 +19,9 @@ function PanelLayout({ children, ...props }) {
 	};
 
 	useEffect(() => {
-		// Set up your listeners here, for example:
-		// emitter.on('setPanelTitleText', (newText) => {
-		//   setPanelTitleText(newText);
-		// });
-		// Remember to unsubscribe or clean up the listeners when the component unmounts.
-		// return () => {
-		//   emitter.off('setPanelTitleText');
-		// };
+		EventEmitter.addListener("setPanelTitleText", (data) => {
+			setPanelTitleText(data);
+		});
 	}, []); // Add dependencies if needed
 
 	return (
@@ -54,7 +50,7 @@ function PanelLayout({ children, ...props }) {
 							</h6>
 						</div>
 
-						<div className="panel-container-header-right">
+						<div className="panel-container-header-right ms-auto">
 							<div className="profile-popover">
 								<button
 									className="profile-popover-toggle-btn"
@@ -65,33 +61,33 @@ function PanelLayout({ children, ...props }) {
 										})
 									}
 								>
-									<sd-avatar>
+									<Avatar>
 										<img
-											src="../../assets/pics/avatar.jpg"
+											src={require("../../assets/images/avatar.jpg")}
 											alt="Avatar"
 										/>
-									</sd-avatar>
+									</Avatar>
 								</button>
 
 								{mobilePopover.show && (
 									<div className="profile-popover-content">
-										<sd-avatar size="xxl">
+										<Avatar size="xxl">
 											<img
-												src="../../assets/pics/avatar.jpg"
+												src={require("../../assets/images/avatar.jpg")}
 												alt="Avatar"
 											/>
-										</sd-avatar>
+										</Avatar>
 
 										<div className="profile-popover-name">
 											Louise Thompson
 										</div>
 
-										<sd-btn
+										<Btn
 											className="profile-popover-logout-btn"
 											type="outline"
 										>
 											Logout
-										</sd-btn>
+										</Btn>
 									</div>
 								)}
 							</div>

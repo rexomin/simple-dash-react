@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import {
 	AuthCode,
 	Avatar,
@@ -16,8 +17,13 @@ import {
 	SelectInput,
 	Table,
 } from "../../../components";
+import EventEmitter from "../../../utils/EventEmitter";
 
 export default function Components() {
+	useEffect(() => {
+		EventEmitter.emit("setPanelTitleText", "Components");
+	});
+
 	return (
 		<div className="panel-content-container">
 			<div className="panel-content">
