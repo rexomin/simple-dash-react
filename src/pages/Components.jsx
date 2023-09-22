@@ -5,8 +5,11 @@ import {
 	AvatarWithName,
 	Badge,
 	Btn,
+	Card,
 	Checkbox,
+	IconText,
 	Input,
+	MicroCard,
 	SelectInput,
 } from "../components";
 import Textarea from "../components/inputs/TextArea";
@@ -18,9 +21,9 @@ export default function Components() {
 			<hr />
 
 			<div className="py-2">
-				<h4 class="mb-2">Avatars</h4>
+				<h4 className="mb-2">Avatars</h4>
 
-				<div class="d-flex align-items-center">
+				<div className="d-flex align-items-center">
 					<Avatar size="sm">
 						<img
 							src={require("../assets/images/avatar.jpg")}
@@ -48,7 +51,7 @@ export default function Components() {
 			<hr />
 
 			<div className="py-2">
-				<h4 class="mb-2">Avatar Stack</h4>
+				<h4 className="mb-2">Avatar Stack</h4>
 
 				<AvatarStack>
 					{Array.from({ length: 4 }, (_, i) => (
@@ -67,10 +70,10 @@ export default function Components() {
 			<hr />
 
 			<div className="py-2">
-				<h4 class="mb-2">Avatar With Name</h4>
+				<h4 className="mb-2">Avatar With Name</h4>
 
 				<AvatarWithName name="Asghar Taraghe">
-					<Avatar class="ms-2" size="md" color="blue">
+					<Avatar className="ms-2" size="md" color="blue">
 						<span>AT</span>
 					</Avatar>
 				</AvatarWithName>
@@ -126,6 +129,177 @@ export default function Components() {
 					select-options={[{ title: "me" }, { title: "others" }]}
 				/>
 				<AuthCode />
+			</div>
+
+			<hr />
+
+			<div className="py-2">
+				<h4 className="mb-4">Cards</h4>
+				<div className="d-flex align-items-center flex-wrap">
+					<Card className="m-2" type="outline" style={{maxWidth: "360px"}}>
+						<div className="card-img">
+							<img src={require("../assets/images/test.jpg")} alt="Card " />
+						</div>
+
+						<div className="card-title mt-4">
+							Boston family home
+						</div>
+
+						<div className="card-text mt-2">
+							A beautiful townhouse in the heart of Miami's down town district. With 3 bedrooms and a heated pool.
+						</div>
+
+						<ul className="icon-texts mt-4">
+							<li>
+								<IconText icon="isax isax-car">3 bedrooms</IconText>
+							</li>
+							<li>
+								<IconText icon="isax isax-car">3 bedrooms</IconText>
+							</li>
+							<li>
+								<IconText icon="isax isax-car">3 bedrooms</IconText>
+							</li>
+						</ul>
+
+						<div className="card-footer mt-4">
+							<Btn className="full-width" type="outline">View listing details</Btn>
+						</div>
+					</Card>
+
+					<Card className="m-2" style={{maxWidth: "360px"}}>
+						<div className="card-img">
+							<img src={require("../assets/images/test.jpg")} alt="Card " />
+						</div>
+
+						<div className="card-title mt-4">
+							Wireframing exercise
+						</div>
+
+						<div className="card-text mt-2">
+							23 Dec, 2022
+						</div>
+
+						<div className="card-footer d-flex mt-4">
+							<div className="left">
+								<AvatarStack>
+								{Array.from({ length: 4 }, (_, i) => (
+						<li className="avatar-stack-item" key={i}>
+							<Avatar>
+								<img
+									src={require("../assets/images/avatar.jpg")}
+									alt="Avatar"
+								/>
+							</Avatar>
+						</li>
+					))}
+								</AvatarStack>
+							</div>
+
+							<div className="my-spacer"></div>
+
+							<div className="right">
+								<Badge className="bg-orange fg-white">Canceled</Badge>
+							</div>
+						</div>
+					</Card>
+
+					<Card className="m-2" style={{maxWidth: "360px"}}>
+						<div className="card-title">
+							Wireframing exercise
+						</div>
+
+						<div className="card-text mt-2">
+							23 Dec, 2022
+						</div>
+
+						<div className="card-footer d-flex mt-4">
+							<div className="left">
+								<Avatar>
+									<span>MK</span>
+								</Avatar>
+							</div>
+
+							<div className="my-spacer"></div>
+
+							<div className="right">
+								<Badge className="bg-green fg-white">Canceled</Badge>
+							</div>
+						</div>
+					</Card>
+
+					<Card className="m-2" style={{maxWidth: "380px"}}>
+						<div className="card-profile-avatar">
+							<Avatar size="xxl">
+								<span>MK</span>
+							</Avatar>
+						</div>
+
+						<div className="card-profile-title mt-3">
+							Rober Whistable
+						</div>
+
+						<div className="card-profile-desc mt-2">
+							23 Dec, 2022
+						</div>
+
+						<div className="card-profile-details-wrapper mt-4">
+							<ul className="card-profile-details">
+								<li>
+									<div className="detail-title">
+										Projects
+									</div>
+									<div className="detail-value">
+										24
+									</div>
+								</li>
+
+								<div className="divider"></div>
+
+								<li>
+									<div className="detail-title">
+										Tasks
+									</div>
+									<div className="detail-value">
+										132
+									</div>
+								</li>
+
+								<div className="divider"></div>
+
+								<li>
+									<div className="detail-title">
+										Insights
+									</div>
+									<div className="detail-value">
+										31
+									</div>
+								</li>
+							</ul>
+						</div>
+
+						<div className="card-footer mt-4 center-btn">
+							<Btn type="outline">
+								View profile
+							</Btn>
+						</div>
+					</Card>
+
+					<MicroCard style={{flex: "1"}}>
+						<div className="micro-card-img">
+							<img src={require("../assets/images/test.jpg")} alt="Card " />
+						</div>
+
+						<div className="micro-card-content">
+							<div className="micro-card-title">
+								Boston family home
+							</div>
+
+							<div className="micro-card-desc">
+								A beautiful townhouse in the heart of Miami's down town district. With 3 bedrooms and a heated pool.
+							</div>
+						</div>
+					</MicroCard>
+				</div>
 			</div>
 		</div>
 	);
