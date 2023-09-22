@@ -1,18 +1,18 @@
 import React from "react";
 import "../../styles/components/inputs/_input.scss";
 
-const Input = (props) => {
-	const {
-		type = "text",
-		placeholder = "",
-		label = "",
-		id = "",
-		value = "",
-		disabled = false,
-	} = props;
-
+const Input = ({
+	id,
+	type = "text",
+	placeholder,
+	value,
+	disabled = false,
+	label,
+	onChange = () => {},
+	...props
+}) => {
 	const handleInput = (e) => {
-		props.onChange(e.target.value);
+		onChange(e.target.value);
 	};
 
 	return (

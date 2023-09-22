@@ -1,16 +1,15 @@
 import React from "react";
 import "../../styles/components/inputs/_textarea.scss";
 
-const Textarea = (props) => {
-	const {
-		type = "text",
-		placeholder = "",
-		label = "",
-		id = "",
-		value = "",
-		onChange = () => {},
-	} = props;
-
+const Textarea = ({
+	id,
+	type = "text",
+	placeholder,
+	value,
+	label,
+	onChange = () => {},
+	...props
+}) => {
 	const handleInput = (e) => {
 		onChange(e.target.value);
 	};
