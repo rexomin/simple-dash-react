@@ -11,6 +11,7 @@ import {
 	Input,
 	Metric,
 	MicroCard,
+	ProgressBar,
 	SelectInput,
 } from "../components";
 import Textarea from "../components/inputs/TextArea";
@@ -318,6 +319,16 @@ export default function Components() {
 				<div className="py-2">
 					<h4 className="mb-4">Metric</h4>
 					<Metric />
+				</div>
+
+				<hr />
+
+				<div className="py-2">
+					<h4 className="mb-4">Progressbar</h4>
+					<ProgressBar value="0" />
+					<ProgressBar className="mt-2" value="50" />
+					<ProgressBar className="mt-2" value="75" />
+					<ProgressBar className="mt-2" value="90" />
 				</div>
 			</div>
 		</div>
