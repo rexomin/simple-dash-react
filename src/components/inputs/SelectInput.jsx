@@ -1,15 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import "../../styles/components/inputs/_select-input.scss";
 
-const SelectInput = (props) => {
-	const {
-		label = "",
-		placeholder = "Select Option",
-		selectOptions = [],
-		value = "",
-		onChange = () => {},
-	} = props;
-
+const SelectInput = ({
+	label,
+	placeholder = "Select an Option",
+	options,
+	onChange = () => {},
+	...props
+}) => {
 	const [showOptions, setShowOptions] = useState(false);
 	const [selectedOption, setSelectedOption] = useState(null);
 
@@ -63,7 +61,7 @@ const SelectInput = (props) => {
 				<i className="sd-select-icon fas fa-chevron-down"></i>
 
 				<ul className="sd-select-options">
-					{selectOptions.map((selectOption, index) => (
+					{options.map((selectOption, index) => (
 						<li
 							key={index}
 							onClick={() => changeSelectedOption(selectOption)}

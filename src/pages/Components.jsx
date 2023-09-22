@@ -129,7 +129,7 @@ export default function Components() {
 				<Checkbox className="mb-4" text="Please check me!" />
 				<SelectInput
 					className="mb-4"
-					select-options={[{ title: "me" }, { title: "others" }]}
+					options={[{ title: "me" }, { title: "others" }]}
 				/>
 				<AuthCode />
 			</div>
