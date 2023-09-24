@@ -2,10 +2,10 @@ import React from "react";
 import "../../styles/components/chat/_chat-header.scss";
 import Btn from "../Btn";
 
-function ChatHeader(props) {
+function ChatHeader({deselectChat}) {
 	return (
 		<div className="sd-chat-header">
-			<button className="back-btn" onClick={() => props.deselectChat()}>
+			<button className="back-btn" onClick={() => deselectChat()}>
 				<i className="fas fa-chevron-left"></i>
 			</button>
 

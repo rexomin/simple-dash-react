@@ -100,7 +100,7 @@ function Chat() {
 
 						{isChatOpen && (
 							<div className="col chat-col">
-								<ChatSection />
+								<ChatSection deselectChat={deselectChat} />
 							</div>
 						)}
 					</div>

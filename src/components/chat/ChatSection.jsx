@@ -4,10 +4,10 @@ import ChatHeader from "./ChatHeader";
 import ChatMessages from "./ChatMessages";
 import ChatFooter from "./ChatFooter";
 
-function ChatSection() {
+function ChatSection({ deselectChat }) {
 	return (
 		<div className="sd-chat">
-			<ChatHeader />
+			<ChatHeader deselectChat={deselectChat} />
 			<ChatMessages />
 			<ChatFooter />
 		</div>
