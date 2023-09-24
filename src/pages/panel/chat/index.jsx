@@ -3,6 +3,7 @@ import { Avatar, Badge, Btn, SectionCard } from "../../../components";
 import "../../../styles/pages/chat/_index.scss";
 import ChatSection from "../../../components/chat/ChatSection";
 import EventEmitter from "../../../utils/EventEmitter";
+import NewTicketModal from "./NewTicketModal";
 
 function Chat() {
 	useEffect(() => {
@@ -11,7 +12,11 @@ function Chat() {
 
 	const [isChatOpen, setIsChatOpen] = useState(false);
 	const [selectedChat, setSelectedChat] = useState(null);
+
+	// New ticket modal
 	const [showNewTicketModal, setShowNewTicketModal] = useState(false);
+	const handleOpenNewTicketModal = () => setShowNewTicketModal(true);
+	const handleCloseNewTicketModal = () => setShowNewTicketModal(false);
 
 	const selectChat = (index) => {
 		setIsChatOpen(true);
@@ -26,6 +31,9 @@ function Chat() {
 	const tickets = [0, 1, 2, 3];
 
 	return (
+		<>
+		<NewTicketModal open={showNewTicketModal} onClose={handleCloseNewTicketModal} />
+
 		<div className="panel-content-wrapper">
 			<div className="panel-content-container">
 				<div className="support">
@@ -39,7 +47,7 @@ function Chat() {
 								className="tickets-list-card"
 								title="Tickets Lists"
 								headerRight={
-									<Btn type="primary">
+									<Btn type="primary" onClick={handleOpenNewTicketModal}>
 										<i className="fas fa-plus btn-icon"></i>{" "}
 										Create New Ticket
 									</Btn>
@@ -104,13 +112,10 @@ function Chat() {
 							</div>
 						)}
 					</div>
-
-					<div className="new-ticket">
-						{/* Rest of your new ticket modal */}
-					</div>
 				</div>
 			</div>
 		</div>
+		</>
 	);
 }
 

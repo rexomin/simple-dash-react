@@ -30,6 +30,7 @@ export { default as ProgressBar } from './ProgressBar';
 export { default as Table } from './Table';
 export { default as StatisticBox } from './StatisticBox';
 export { default as SectionCard } from './SectionCard';
+export { default as UploadLoading } from './UploadLoading';
 
 //inputs
 export { default as AuthCode } from './inputs/AuthCode';
