@@ -31,6 +31,7 @@ export { default as Table } from './Table';
 export { default as StatisticBox } from './StatisticBox';
 export { default as SectionCard } from './SectionCard';
 export { default as UploadLoading } from './UploadLoading';
+export { default as Loading } from './Loading';
 
 //inputs
 export { default as AuthCode } from './inputs/AuthCode';
