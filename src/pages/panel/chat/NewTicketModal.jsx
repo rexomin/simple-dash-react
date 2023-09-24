@@ -2,7 +2,13 @@ import * as React from "react";
 import { Backdrop, Fade } from "@mui/material";
 import Modal from "@mui/material/Modal";
 import "../../../styles/pages/chat/_new-ticket-modal.scss";
-import { Btn, Input, SelectInput, Textarea, UploadLoading } from "../../../components";
+import {
+	Btn,
+	Input,
+	SelectInput,
+	Textarea,
+	UploadLoading,
+} from "../../../components";
 
 export default function NewTicketModal({ open, onClose, ...props }) {
 	return (
@@ -32,7 +38,10 @@ export default function NewTicketModal({ open, onClose, ...props }) {
 							</div>
 
 							<div className="new-ticket-content">
-								<form className="new-ticket-form">
+								<form
+									className="new-ticket-form"
+									onSubmit={(e) => e.preventDefault()}
+								>
 									<div className="form-row">
 										<Input
 											label="Title"
@@ -63,7 +72,7 @@ export default function NewTicketModal({ open, onClose, ...props }) {
 									</div>
 									<div className="form-row">
 										<Textarea
-                                            label="Message"
+											label="Message"
 											id="new-ticket-desc"
 											name="new-ticket-desc"
 											placeholder="Explain the problem"
@@ -83,7 +92,7 @@ export default function NewTicketModal({ open, onClose, ...props }) {
 										</Btn>
 									</div>
 									<div className="form-row">
-										<UploadLoading/>
+										<UploadLoading />
 									</div>
 									<div className="form-btns d-flex">
 										<Btn
