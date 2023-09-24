@@ -1,7 +1,15 @@
 import React from "react";
 import "../styles/components/_btn.scss";
+import Loading from "./Loading";
 
-const Btn = ({ type, children, onClick = () => {}, disabled = false, ...props }) => {
+const Btn = ({
+	type,
+	children,
+	onClick = () => {},
+	disabled = false,
+	loading = false,
+	...props
+}) => {
 	const handleClick = (event) => {
 		if (!disabled) {
 			onClick(event);
@@ -10,13 +18,23 @@ const Btn = ({ type, children, onClick = () => {}, disabled = false, ...props })
 
 	return (
 		<button
-			className={`btn ${type ? `btn-${type}` : ""} ${
-				disabled ? "disabled" : ""
-			}` + props.className}
+			className={
+				`btn ${type ? `btn-${type}` : ""} ${
+					disabled ? "disabled" : ""
+				}` + props.className
+			}
 			onClick={handleClick}
 			disabled={disabled}
 		>
-			{children}
+			{loading && (
+				<div className="btn-loader">
+					<Loading size={20} thickness={2} color="#fff" />
+				</div>
+			)}
+
+			<span className={"btn-content" + (loading ? " btn-loading" : "")}>
+				{children}
+			</span>
 		</button>
 	);
 };

@@ -101,6 +101,9 @@ export default function Components() {
 				<Btn className="ms-2" type="outline">
 					Click Me!
 				</Btn>
+				<Btn className="ms-2" type="primary" loading={true}>
+					Loading
+				</Btn>
 			</div>
 
 			<div className="panel-content mt-4">
