@@ -9,13 +9,9 @@ export default function Dashboard() {
 
 	return (
 		<div className="panel-content-container">
-			<div className="panel-content">
-				<Statistics />
-			</div>
+			<Statistics />
 
-			<div className="panel-content  mt-4">
-				Here is the dashboard!
-			</div>
+			<div className="panel-content  mt-4">Here is the dashboard!</div>
 		</div>
 	);
 }
