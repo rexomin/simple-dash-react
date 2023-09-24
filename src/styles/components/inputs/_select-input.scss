@@ -33,6 +33,7 @@
             top: 50%;
             transform: translateY(-50%);
             color: #1c1c28;
+            transition: all 300ms ease;
         }
 
         .sd-select-options {
@@ -70,9 +71,15 @@
             }
         }
 
-        &.open .sd-select-options {
-            display: block;
-            z-index: 5;
+        &.open{
+            .sd-select-options {
+                display: block;
+                z-index: 5;
+            }
+
+            .sd-select-icon {
+                transform: translateY(-50%) rotate(180deg);
+            }
         }
     }
 }
