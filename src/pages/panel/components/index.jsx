@@ -16,6 +16,7 @@ import {
 	ProgressBar,
 	SelectInput,
 	Table,
+	Loading,
 } from "../../../components";
 import EventEmitter from "../../../utils/EventEmitter";
 
@@ -346,6 +347,16 @@ export default function Components() {
 						</tr>
 					</tbody>
 				</Table>
+			</div>
+
+			<div className="panel-content mt-4">
+				<h4 className="mb-4">Loading</h4>
+
+				<div className="d-flex align-items-center">
+					<Loading size={32} thickness={4} />
+					<Loading className="ms-5" size={32} thickness={4} color="green" />
+					<Loading className="ms-5" size={32} thickness={4} color="orange" />
+				</div>
 			</div>
 		</div>
 	);
